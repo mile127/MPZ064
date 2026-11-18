@@ -1,46 +1,47 @@
-# Практични задатак ERS27 — почетни пројекат
+# Prakticni zadatak MPZ064 - Evidencija unosa vode
 
-Почетни пројекат садржи шест .NET 8 пројеката и основне уговоре, али не садржи решење индивидуалног задатка. У свакој спецификацији су обавезни сви принципи SOLID и правила Clean Architecture; захтеви S1–S5 нису изборни.
+Resenje prakticnog zadatka MPZ064 za evidenciju dnevnog unosa vode ('CasaVode', 'BocaVode'), realizovano u .NET 8 okruzenju uz postovanje Clean Architecture pravila i SOLID principa.
 
-## Покретање
+## Pokretanje
 
 Потребан је .NET 8 SDK.
 
 ```bash
+# prevodjenje resenja
 dotnet restore
 dotnet build
+
+# pokretanje testova
 dotnet test
+
+# pokretanje u memorijskom rezimu
 dotnet run --project Presentation -- in-memory
-# после имплементације JSON репозиторијума
+
+# pokretanje sa trajnim cuvanjem u JSON datoteci (podaci.json)
 dotnet run --project Presentation -- json
 ```
+## Izbor rezima rada i zavisnosti
+- in-memory - podaci se cuvaju u radnoj memoriji tokom trajanja programa (InMemoryZapisiRepozitorijum).
+- json - podaci se polimorfno serijalizuju i trajno cuvaju u datoteci podaci.json (JsonZapisiRepozitorijum).
+- Sastavljanje svih zavisnosti i izbor repozitorijuma i logera (FileLoggerServis / ConsoleLoggerServis) centralizovano je na jednom mestu u klasi AppContainer (Presentation/Composition/AppContainer.cs). 
 
-У почетном пројекту операције F1–F6 нису реализоване. Класе обележене са `TODO` треба допунити или заменити према додељеној спецификацији.
+## Organizacija resenja
 
-## Организација
+- Shared - zajednicki tipovi Result, Result<T> i AppError za upravljanje ishodima operacija bez oslanjanja na izuzetke u redovnom toku.
+- Domain — domenski modeli (Zapis, CasaVode, BocaVode, StatusZapisa) i poslovna pravila validacije zapremine (50-2000 ml) i promene statusa.
+- Application — poslovni servisi(ZapisServis, ZapisPregledServis) i razdvojeni ugovori (IZapisiRepozitorijum, IZapisiCitanjeRepozitorijum, IZapisiUpisRepozitorijum, ILoggerServis).
+- Database — implementacije skladistenja podataka (InMemoryZapisiRepozitorijum i JsonZapisiRepozitorijum sa polimorfnom JSON serijalizacijom).
+- Infrastructure — tehnicki servisi za evidenciju dogadjaja (FileLoggerServis, ConsoleLoggerServis).
+- Presentation — konzolni korisnicki interfejs (ConsoleMenu, SystemConsoleIO), formateri prikaza (SazetiZapisFormater, DetaljniZapisFormater) i AppContainer.
+- Tests — NUnit testovi (TE1-TE9 i provera smera zavisnosti slojeva).
 
-- `Domain` — модели и пословна правила.
-- `Application` — случајеви употребе, уговори, `Result` и зависности према апстракцијама.
-- `Database` — меморијски и JSON репозиторијум; почетне имплементације нису довршене.
-- `Infrastructure` — технички адаптери, укључујући датотечни логер.
-- `Presentation` — конзолни интерфејс и `AppContainer`.
-- `Tests` — почетни архитектонски тестови, NUnit и Moq.
+## Dokumentacija
+- [Korisnicke price(US-01 - US-06)](docs/user-stories.md)
+- [Arhitektura resenja i SOLID principi](docs/architecture.md)
 
-## Обавезни принципи
+## Studentski podaci
 
-- **SRP** — раздвојити пословна правила, ток операција, складиштење и приказ.
-- **OCP** — реализовати проширив приказ F3 кроз најмање два форматера који имплементирају заједнички уговор.
-- **LSP** — меморијски и JSON репозиторијум морају проћи исти скуп тестова уговора.
-- **ISP** — полазни `IZapisiRepozitorijum` раздвојити на уговоре за читање и упис/измену и користити их по потреби.
-- **DIP** — зависности пословних сервиса проследити преко конструктора; у `AppContainer` омогућити избор репозиторијума и логера.
-
-Задржати смер зависности: `Application` и `Domain` не зависе од `Database`, `Infrastructure` ни `Presentation`.
-
-## Студентски подаци
-
-- Број и назив задатка: _____________________________
-- Јавни GitHub репозиторијум: _______________________
+- Број и назив задатка: MPZ064 - Evidencija unosa vode
+- Јавни GitHub репозиторијум: https://github.com/mile127/MPZ064
 - Pull Request 1: __________________________________
 - Pull Request 2: __________________________________
-
-README допунити упутством за покретање и тестирање, избором режима чувања и везама ка спојеним захтевима за спајање.

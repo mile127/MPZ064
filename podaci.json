@@ -1,0 +1,46 @@
+[
+  {
+    "$type": "boca",
+    "ZapreminaBoce": 500,
+    "TipZapisa": "Boca vode",
+    "ZapreminaMl": 500,
+    "Id": "25f017fa-69d7-4d5b-a4a5-631004814f6f",
+    "Naziv": "rae",
+    "Opis": "asrsar",
+    "KreiranoUtc": "2026-11-17T22:09:15.384061+00:00",
+    "Status": 2
+  },
+  {
+    "$type": "casa",
+    "ZapreminaCase": 150,
+    "TipZapisa": "Casa vode",
+    "ZapreminaMl": 150,
+    "Id": "5f91ea96-e80f-4ed1-9214-8bdefe823f69",
+    "Naziv": "rrr",
+    "Opis": "rrsars",
+    "KreiranoUtc": "2026-11-17T22:11:02.7678669+00:00",
+    "Status": 0
+  },
+  {
+    "$type": "casa",
+    "ZapreminaCase": 400,
+    "TipZapisa": "Casa vode",
+    "ZapreminaMl": 400,
+    "Id": "cd1ec11b-f02d-4e05-8adc-ee350978e510",
+    "Naziv": "rwq",
+    "Opis": "asr",
+    "KreiranoUtc": "2026-11-17T23:45:23.7648806+00:00",
+    "Status": 0
+  },
+  {
+    "$type": "boca",
+    "ZapreminaBoce": 333,
+    "TipZapisa": "Boca vode",
+    "ZapreminaMl": 333,
+    "Id": "7ea91556-66c3-46d6-ace6-97f27c7b7438",
+    "Naziv": "rsar",
+    "Opis": "rasrs",
+    "KreiranoUtc": "2026-11-17T23:45:34.396224+00:00",
+    "Status": 2
+  }
+]

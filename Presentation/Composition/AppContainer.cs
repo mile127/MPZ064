@@ -15,19 +15,24 @@ public sealed class AppContainer
     public required IZapisiRepozitorijum Repozitorijum { get; init; }
     public required ILoggerServis Logger { get; init; }
     public required ZapisServis Servis { get; init; }
+    public required ZapisPregledServis PregledServis { get; init; }
 
-    public static AppContainer Create(string rezim)
+    public static AppContainer Create(string rezim, string loggerTip = "file")
     {
         IZapisiRepozitorijum repo = rezim.Equals("json", StringComparison.OrdinalIgnoreCase)
             ? new JsonZapisiRepozitorijum("podaci.json")
             : new InMemoryZapisiRepozitorijum();
-        ILoggerServis logger = new FileLoggerServis();
+        ILoggerServis logger = loggerTip.Equals("console", StringComparison.OrdinalIgnoreCase)
+            ? new ConsoleLoggerServis()
+            : new FileLoggerServis();
+
         return new AppContainer
         {
             Io = new SystemConsoleIO(),
             Repozitorijum = repo,
             Logger = logger,
-            Servis = new ZapisServis(repo, logger)
+            Servis = new ZapisServis(repo, logger),
+            PregledServis = new ZapisPregledServis(repo)
         };
     }
 }

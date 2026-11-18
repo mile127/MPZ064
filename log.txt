@@ -1,0 +1,15 @@
+[17.11.2026 23:08]: Evidentiran zapis: Casa vode (250 ml) - rosa
+[17.11.2026 23:09]: Evidentiran zapis: Boca vode (500 ml) - rae
+[17.11.2026 23:11]: Evidentiran zapis: Casa vode (150 ml) - rrr
+[17.11.2026 23:36]: Potvrdjen zapis: rae (25f017fa-69d7-4d5b-a4a5-631004814f6f)
+[17.11.2026 23:36]: Ponisten zapis: rae (25f017fa-69d7-4d5b-a4a5-631004814f6f)
+[17.11.2026 23:37]: Evidentiran zapis: Casa vode (240 ml) - ewew
+[17.11.2026 23:37]: Neuspesno evidentiranje: Zapremina boce mora biti izmedju 50 i 2000 ml (Parameter 'zapreminaBoce')
+[17.11.2026 23:37]: Evidentiran zapis: Boca vode (424 ml) - asra
+[17.11.2026 23:37]: Potvrdjen zapis: ewew (59bbd72a-f66d-4e70-966d-e003f8d526f6)
+[17.11.2026 23:37]: Ponisten zapis: ewew (59bbd72a-f66d-4e70-966d-e003f8d526f6)
+[17.11.2026 23:40]: Evidentiran zapis: Casa vode (223 ml) - wrq
+[18.11.2026 00:45]: Evidentiran zapis: Casa vode (400 ml) - rwq
+[18.11.2026 00:45]: Neuspesno evidentiranje: Zapremina boce mora biti izmedju 50 i 2000 ml (Parameter 'zapreminaBoce')
+[18.11.2026 00:45]: Evidentiran zapis: Boca vode (333 ml) - rsar
+[18.11.2026 00:46]: Ponisten zapis: rsar (7ea91556-66c3-46d6-ace6-97f27c7b7438)
