@@ -43,5 +43,5 @@ dotnet run --project Presentation -- json
 
 - Број и назив задатка: MPZ064 - Evidencija unosa vode
 - Јавни GitHub репозиторијум: https://github.com/mile127/MPZ064
-- Pull Request 1: __________________________________
-- Pull Request 2: __________________________________
+- Pull Request 1: https://github.com/mile127/MPZ064/pull/1
+- Pull Request 2: https://github.com/mile127/MPZ064/pull/2
